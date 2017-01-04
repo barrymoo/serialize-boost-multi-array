@@ -7,7 +7,7 @@ namespace boost {
 namespace serialization {
 
 template <typename T, int N>
-class ma_serialize
+struct ma_serialize
 {
   typedef multi_array<T, N> tensor;
   typedef typename tensor::index idx;
