@@ -7,8 +7,15 @@ using namespace boost;
 
 int main () {
   SerializableTensorN<double, 2> matrix;
-  typedef const typename SerializableTensorN<double, 2>::index index;
-  boost::array<index, 2> dims = {{10l, 10l}};
-  matrix.resize(dims);
+  matrix.resize(extents[10][10]);
+
+  for (auto i = 0; i < matrix.tensor.shape()[0]; ++i) {
+    for (auto j = 0; j < matrix.tensor.shape()[1]; ++j) {
+      matrix.tensor[i][j] = 1;
+    }
+  }
+
+  cout << matrix.tensor[0][0] << '\n';
+
   return 0;
 }

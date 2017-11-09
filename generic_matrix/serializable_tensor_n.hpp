@@ -13,7 +13,7 @@ class SerializableTensorN
     tensorN tensor;
 
     SerializableTensorN(){};
-    void resize(array<index, N> dims) {
+    void resize(detail::multi_array::extent_gen<N> dims) {
       tensor.resize(dims);
     }
 };
