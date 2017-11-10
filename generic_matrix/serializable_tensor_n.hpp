@@ -22,11 +22,6 @@ class SerializableTensorN
     void size(boost::detail::multi_array::extent_gen<N> dims) {
       tensor.resize(dims);
     }
-
-    template <class Archive>
-    void serialize(Archive &ar, const unsigned int version) {
-      ar & tensor;
-    }
 };
 
 } // namespace serialization
